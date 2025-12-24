@@ -98,65 +98,6 @@ export function Certifications() {
             />
           ))}
         </div>
-
-        {/* Education Section */}
-        <div className="border-t border-primary/20 pt-12">
-          <h3 className="text-2xl font-semibold mb-8 text-foreground">
-            Education
-          </h3>
-
-          <div className="space-y-6">
-            <div className="card-glow p-6 rounded-lg border-l-4 border-l-secondary">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h4 className="text-xl font-semibold text-foreground">
-                    B.Tech in Information Technology
-                  </h4>
-                  <p className="text-secondary text-sm font-medium mt-1">
-                    Bharati Vidyapeeth (Deemed to be University)
-                  </p>
-                  <p className="text-foreground/60 text-sm mt-2">
-                    Expected Graduation: 2027
-                  </p>
-                  <p className="text-foreground/70 text-sm mt-2">
-                    Location: Pune, Maharashtra
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-primary glow-text">
-                    8.60
-                  </div>
-                  <p className="text-foreground/60 text-xs mt-1">/10 GPA</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="card-glow p-6 rounded-lg border-l-4 border-l-secondary">
-              <div className="flex items-start justify-between">
-                <div>
-                  <h4 className="text-xl font-semibold text-foreground">
-                    12th Grade
-                  </h4>
-                  <p className="text-secondary text-sm font-medium mt-1">
-                    Central Academy Senior Secondary School
-                  </p>
-                  <p className="text-foreground/60 text-sm mt-2">
-                    Completed: 2022
-                  </p>
-                  <p className="text-foreground/70 text-sm mt-2">
-                    Location: Lucknow, Uttar Pradesh
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-3xl font-bold text-primary glow-text">
-                    79
-                  </div>
-                  <p className="text-foreground/60 text-xs mt-1">/100</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );
