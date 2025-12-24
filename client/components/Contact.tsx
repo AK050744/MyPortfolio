@@ -168,14 +168,14 @@ export function Contact() {
           </div>
         </div>
 
-        {/* Availability */}
-        <div className="card-glow p-6 rounded-lg text-center border-t border-primary/20 pt-8">
-          <p className="text-foreground mb-2">
-            <span className="inline-block h-2 w-2 rounded-full bg-primary mr-2 animate-pulse" />
-            Currently Available for Opportunities
+        {/* Status */}
+        <div className="card-glow p-6 rounded-lg text-center border-t border-primary/20 pt-8 hover:border-primary/50 transition-colors">
+          <p className="text-foreground mb-2 flex items-center justify-center gap-2">
+            <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
+            Open to Collaboration
           </p>
           <p className="text-foreground/60 text-sm">
-            Open to cybersecurity positions, internships, and freelance projects
+            Available for cybersecurity consulting, custom security solutions, and innovative project partnerships
           </p>
         </div>
       </div>
