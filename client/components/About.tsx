@@ -2,12 +2,12 @@ import { CheckCircle } from "lucide-react";
 
 export function About() {
   const highlights = [
-    "Cybersecurity Intern and Penetration Testing Specialist",
-    "Skilled in Ethical Hacking and Network Security",
-    "B.Tech in Information Technology (Expected 2027)",
-    "GPA: 8.60/10",
-    "Experienced in Python, MySQL, and Security Tools",
-    "Participated in Multiple Hackathons",
+    "Cybersecurity Specialist & Penetration Tester",
+    "Ethical Hacking & Network Security Expert",
+    "AI & Machine Learning Enthusiast",
+    "Full-Stack Security Solutions Developer",
+    "Experienced with Python, MySQL, and Modern Security Tools",
+    "Hackathon Winner & Open Source Contributor",
   ];
 
   return (
@@ -27,15 +27,15 @@ export function About() {
           {/* Left Column */}
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              As a motivated and detail-oriented Cybersecurity Intern and Penetration Tester, I am committed to enhancing organizational security through advanced technical knowledge and continuous skill development.
+              Passionate Cybersecurity Professional dedicated to developing innovative security solutions and identifying vulnerabilities before they become threats. I combine deep technical knowledge with creative problem-solving to build robust security systems.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              My expertise spans ethical hacking, penetration testing, vulnerability assessment, and network security. I'm passionate about identifying and mitigating security threats in dynamic environments.
+              My expertise spans ethical hacking, penetration testing, vulnerability assessment, and network security. I excel at developing AI-driven security tools and leading teams through complex security challenges in dynamic environments.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              Currently pursuing my B.Tech in Information Technology at Bharati Vidyapeeth University, with a strong academic foundation and hands-on experience in cybersecurity practices.
+              I'm driven by continuous learning and sharing knowledge with the security community. My recent work includes developing advanced fraud detection systems, web application security testing, and innovative AI-powered development tools.
             </p>
           </div>
 
