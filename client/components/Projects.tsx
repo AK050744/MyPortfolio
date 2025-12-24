@@ -124,42 +124,42 @@ export function Projects() {
           ))}
         </div>
 
-        {/* Additional Project Info */}
+        {/* Core Competencies */}
         <div className="border-t border-primary/20 pt-12">
           <h3 className="text-2xl font-semibold mb-6 text-foreground">
-            Project Highlights
+            Core Competencies
           </h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="card-glow p-6 rounded-lg">
+            <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                Web Application Security
+                Penetration Testing & Vulnerability Assessment
               </h4>
               <p className="text-foreground/70 text-sm">
-                Expertise in identifying and mitigating web vulnerabilities including OWASP Top 10 vulnerabilities, XSS, SQLi, and CSRF attacks.
+                Expert in identifying and mitigating web vulnerabilities including OWASP Top 10, XSS, SQLi, CSRF, and network-level threats.
               </p>
             </div>
-            <div className="card-glow p-6 rounded-lg">
+            <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                AI-Driven Security
+                AI & Machine Learning Security
               </h4>
               <p className="text-foreground/70 text-sm">
-                Experience building intelligent security systems using machine learning for fraud detection and anomaly detection.
+                Building intelligent security systems using machine learning for fraud detection, anomaly detection, and behavioral analytics.
               </p>
             </div>
-            <div className="card-glow p-6 rounded-lg">
+            <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                Network Security
+                Network Security & Infrastructure
               </h4>
               <p className="text-foreground/70 text-sm">
-                Proficiency in network analysis, penetration testing, and firewall configuration for comprehensive security.
+                Proficiency in network analysis, firewall configuration, security hardening, and infrastructure protection across multiple environments.
               </p>
             </div>
-            <div className="card-glow p-6 rounded-lg">
+            <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                System Administration
+                Full-Stack Development & DevSecOps
               </h4>
               <p className="text-foreground/70 text-sm">
-                Experience with Linux administration, system hardening, and implementing security best practices.
+                Building secure applications from ground up, integrating security throughout the development lifecycle with modern tools and frameworks.
               </p>
             </div>
           </div>
