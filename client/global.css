@@ -119,3 +119,43 @@
     white-space: pre;
   }
 }
+
+@layer components {
+  .glow-neon {
+    @apply text-primary shadow-lg shadow-primary/50;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 10px hsl(160 100% 50% / 0.8);
+  }
+
+  .glowing-border {
+    @apply border border-primary shadow-lg shadow-primary/30;
+  }
+
+  .cyber-gradient {
+    background: linear-gradient(135deg, rgb(5, 5, 5) 0%, rgb(20, 30, 30) 100%);
+  }
+
+  .card-glow {
+    @apply bg-card border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px hsl(160 100% 50% / 0.4);
+  }
+  50% {
+    box-shadow: 0 0 40px hsl(160 100% 50% / 0.8);
+  }
+}
+
+@keyframes scan-line {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
