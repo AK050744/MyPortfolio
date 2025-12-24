@@ -1,0 +1,145 @@
+import { Zap, Lock, Brain } from "lucide-react";
+
+interface ProjectCardProps {
+  title: string;
+  date: string;
+  description: string;
+  technologies: string[];
+  icon: React.ReactNode;
+}
+
+function ProjectCard({
+  title,
+  date,
+  description,
+  technologies,
+  icon,
+}: ProjectCardProps) {
+  return (
+    <div className="card-glow p-6 rounded-lg hover:scale-105 transition-transform duration-300 h-full flex flex-col">
+      <div className="flex items-start justify-between mb-4">
+        <div className="inline-flex items-center justify-center h-10 w-10 rounded border border-primary bg-primary/10 text-primary">
+          {icon}
+        </div>
+        <span className="text-xs text-primary bg-primary/10 px-3 py-1 rounded-full">
+          {date}
+        </span>
+      </div>
+
+      <h3 className="text-xl font-semibold text-foreground mb-3">{title}</h3>
+      <p className="text-foreground/70 text-sm mb-4 flex-grow">
+        {description}
+      </p>
+
+      <div className="flex flex-wrap gap-2">
+        {technologies.map((tech, index) => (
+          <span
+            key={index}
+            className="text-xs bg-primary/10 text-primary px-2 py-1 rounded border border-primary/30"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function Projects() {
+  const projects = [
+    {
+      title: "DVWA Setup And Testing with ModSecurity Firewall",
+      date: "Sep 2025",
+      description:
+        "A project aimed at testing web application security. Configured the Damn Vulnerable Web Application (DVWA) with Nginx and the ModSecurity firewall to simulate and analyze web vulnerabilities.",
+      technologies: ["DVWA", "Nginx", "ModSecurity", "Web Security"],
+      icon: <Lock size={20} />,
+    },
+    {
+      title: "AI Personal Assistant (Jarvis)",
+      date: "Mar 2024",
+      description:
+        "Created a voice-activated assistant capable of answering questions, automating tasks, fetching news, and playing music using SpeechRecognition, OpenAI API, and Flask.",
+      technologies: ["Python", "Flask", "OpenAI API", "SpeechRecognition"],
+      icon: <Brain size={20} />,
+    },
+    {
+      title: "Secure Pay AI (One Pay)",
+      date: "Jul 2025",
+      description:
+        "Developed an advanced AI-driven fraud detection system that leverages machine learning, computer vision, and behavioral analytics to provide real-time transaction risk assessment in retail and digital payment environments.",
+      technologies: ["AI/ML", "Computer Vision", "Risk Scoring", "Payment Security"],
+      icon: <Zap size={20} />,
+    },
+  ];
+
+  return (
+    <section id="projects" className="py-20 px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="inline-block mb-4">
+          <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
+            Portfolio
+          </span>
+        </div>
+
+        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground">
+          Featured Projects
+        </h2>
+
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {projects.map((project, index) => (
+            <ProjectCard
+              key={index}
+              title={project.title}
+              date={project.date}
+              description={project.description}
+              technologies={project.technologies}
+              icon={project.icon}
+            />
+          ))}
+        </div>
+
+        {/* Additional Project Info */}
+        <div className="border-t border-primary/20 pt-12">
+          <h3 className="text-2xl font-semibold mb-6 text-foreground">
+            Project Highlights
+          </h3>
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="card-glow p-6 rounded-lg">
+              <h4 className="font-semibold text-primary mb-3">
+                Web Application Security
+              </h4>
+              <p className="text-foreground/70 text-sm">
+                Expertise in identifying and mitigating web vulnerabilities including OWASP Top 10 vulnerabilities, XSS, SQLi, and CSRF attacks.
+              </p>
+            </div>
+            <div className="card-glow p-6 rounded-lg">
+              <h4 className="font-semibold text-primary mb-3">
+                AI-Driven Security
+              </h4>
+              <p className="text-foreground/70 text-sm">
+                Experience building intelligent security systems using machine learning for fraud detection and anomaly detection.
+              </p>
+            </div>
+            <div className="card-glow p-6 rounded-lg">
+              <h4 className="font-semibold text-primary mb-3">
+                Network Security
+              </h4>
+              <p className="text-foreground/70 text-sm">
+                Proficiency in network analysis, penetration testing, and firewall configuration for comprehensive security.
+              </p>
+            </div>
+            <div className="card-glow p-6 rounded-lg">
+              <h4 className="font-semibold text-primary mb-3">
+                System Administration
+              </h4>
+              <p className="text-foreground/70 text-sm">
+                Experience with Linux administration, system hardening, and implementing security best practices.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
