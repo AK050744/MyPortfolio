@@ -64,28 +64,37 @@ function ProjectCard({
 export function Projects() {
   const projects = [
     {
-      title: "DVWA Setup And Testing with ModSecurity Firewall",
+      title: "AI-Powered Code Editor",
+      date: "2025",
+      description:
+        "Advanced code editing tool with AI-powered code completion, intelligent bug detection, and real-time collaboration. Features multi-language support (Python, JavaScript, C++, Java) with WebSocket-based synchronization for seamless team development.",
+      technologies: ["FastAPI", "React", "WebSocket", "OpenAI", "Python", "JavaScript"],
+      icon: <Brain size={20} />,
+      link: "https://github.com/AK050744/Hackathon-.git",
+    },
+    {
+      title: "Secure Pay AI (One Pay)",
+      date: "Jul 2025",
+      description:
+        "Advanced AI-driven fraud detection system leveraging machine learning, computer vision, and behavioral analytics. Provides real-time transaction risk assessment in retail and digital payment environments with facial verification and multi-factor scoring.",
+      technologies: ["AI/ML", "Computer Vision", "Risk Scoring", "Payment Security"],
+      icon: <Zap size={20} />,
+    },
+    {
+      title: "DVWA Security Testing & Analysis",
       date: "Sep 2025",
       description:
-        "A project aimed at testing web application security. Configured the Damn Vulnerable Web Application (DVWA) with Nginx and the ModSecurity firewall to simulate and analyze web vulnerabilities.",
-      technologies: ["DVWA", "Nginx", "ModSecurity", "Web Security"],
+        "Comprehensive web application security testing framework. Configured DVWA with Nginx and ModSecurity firewall to simulate, analyze, and document web vulnerabilities including OWASP Top 10 attacks.",
+      technologies: ["DVWA", "Nginx", "ModSecurity", "Security Analysis", "Penetration Testing"],
       icon: <Lock size={20} />,
     },
     {
       title: "AI Personal Assistant (Jarvis)",
       date: "Mar 2024",
       description:
-        "Created a voice-activated assistant capable of answering questions, automating tasks, fetching news, and playing music using SpeechRecognition, OpenAI API, and Flask.",
+        "Voice-activated intelligent assistant capable of natural language processing, task automation, real-time news fetching, and media control. Built with speech recognition and OpenAI integration for context-aware responses.",
       technologies: ["Python", "Flask", "OpenAI API", "SpeechRecognition"],
       icon: <Brain size={20} />,
-    },
-    {
-      title: "Secure Pay AI (One Pay)",
-      date: "Jul 2025",
-      description:
-        "Developed an advanced AI-driven fraud detection system that leverages machine learning, computer vision, and behavioral analytics to provide real-time transaction risk assessment in retail and digital payment environments.",
-      technologies: ["AI/ML", "Computer Vision", "Risk Scoring", "Payment Security"],
-      icon: <Zap size={20} />,
     },
   ];
 
