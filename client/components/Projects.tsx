@@ -120,6 +120,7 @@ export function Projects() {
               description={project.description}
               technologies={project.technologies}
               icon={project.icon}
+              link={project.link}
             />
           ))}
         </div>
