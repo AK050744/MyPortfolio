@@ -107,14 +107,15 @@ export function Contact() {
               Quick Message
             </h3>
 
-            <form className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-sm font-medium text-foreground mb-2">
                   Name
                 </label>
                 <input
                   type="text"
-                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary transition-colors"
+                  required
+                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
                   placeholder="Your name"
                 />
               </div>
@@ -125,7 +126,8 @@ export function Contact() {
                 </label>
                 <input
                   type="email"
-                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary transition-colors"
+                  required
+                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all"
                   placeholder="your@email.com"
                 />
               </div>
@@ -136,17 +138,27 @@ export function Contact() {
                 </label>
                 <textarea
                   rows={4}
-                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary transition-colors resize-none"
+                  required
+                  className="w-full px-4 py-2 rounded border border-primary/30 bg-background text-foreground placeholder-foreground/40 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary/50 transition-all resize-none"
                   placeholder="Your message..."
                 />
               </div>
 
               <button
                 type="submit"
-                className="w-full px-6 py-2 rounded-lg border border-primary bg-primary text-primary-foreground font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+                disabled={formStatus === "loading"}
+                className="w-full px-6 py-3 rounded-lg border border-primary bg-primary text-primary-foreground font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/50 disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300"
               >
-                Send Message
+                {formStatus === "loading" && "Sending..."}
+                {formStatus === "success" && "Message Sent! ✓"}
+                {formStatus === "idle" && "Send Message"}
               </button>
+
+              {formStatus === "success" && (
+                <div className="p-4 rounded-lg border border-primary/50 bg-primary/10 text-primary text-sm">
+                  Thank you for reaching out! I'll get back to you soon.
+                </div>
+              )}
             </form>
           </div>
         </div>
