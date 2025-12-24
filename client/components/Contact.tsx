@@ -1,6 +1,18 @@
-import { Mail, Phone, Linkedin, MapPin } from "lucide-react";
+import { Mail, Phone, Linkedin, MapPin, Github } from "lucide-react";
+import { useState } from "react";
 
 export function Contact() {
+  const [formStatus, setFormStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormStatus("loading");
+    setTimeout(() => {
+      setFormStatus("success");
+      setTimeout(() => setFormStatus("idle"), 3000);
+    }, 800);
+  };
+
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
@@ -11,11 +23,11 @@ export function Contact() {
         </div>
 
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-          Contact Me
+          Let's Connect
         </h2>
 
         <p className="text-lg text-foreground/70 mb-12 max-w-2xl">
-          I'm always interested in hearing about new cybersecurity challenges and opportunities. Feel free to reach out!
+          Interested in collaborating on security projects or discussing innovative cybersecurity solutions? Reach out!
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
