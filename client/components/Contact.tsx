@@ -73,7 +73,7 @@ export function Contact() {
               href="https://www.linkedin.com/in/ansh-kumar-singh024940208"
               target="_blank"
               rel="noopener noreferrer"
-              className="card-glow p-4 rounded-lg flex items-center gap-4 hover:scale-105 transition-transform"
+              className="card-glow p-4 rounded-lg flex items-center gap-4 hover:scale-105 transition-transform cursor-pointer"
             >
               <div className="flex-shrink-0">
                 <div className="inline-flex items-center justify-center h-10 w-10 rounded border border-primary bg-primary/10 text-primary">
@@ -88,17 +88,22 @@ export function Contact() {
               </div>
             </a>
 
-            <div className="card-glow p-4 rounded-lg flex items-center gap-4">
+            <a
+              href="https://github.com/AK050744"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="card-glow p-4 rounded-lg flex items-center gap-4 hover:scale-105 transition-transform cursor-pointer"
+            >
               <div className="flex-shrink-0">
                 <div className="inline-flex items-center justify-center h-10 w-10 rounded border border-primary bg-primary/10 text-primary">
-                  <MapPin size={20} />
+                  <Github size={20} />
                 </div>
               </div>
               <div>
-                <p className="text-sm text-foreground/60">Location</p>
-                <p className="text-foreground font-medium">India</p>
+                <p className="text-sm text-foreground/60">GitHub</p>
+                <p className="text-foreground font-medium">AK050744</p>
               </div>
-            </div>
+            </a>
           </div>
 
           {/* Quick Message */}
