@@ -1,4 +1,4 @@
-import { Zap, Lock, Brain } from "lucide-react";
+import { Zap, Lock, Brain, ExternalLink } from "lucide-react";
 
 interface ProjectCardProps {
   title: string;
@@ -6,6 +6,7 @@ interface ProjectCardProps {
   description: string;
   technologies: string[];
   icon: React.ReactNode;
+  link?: string;
 }
 
 function ProjectCard({
@@ -14,11 +15,12 @@ function ProjectCard({
   description,
   technologies,
   icon,
+  link,
 }: ProjectCardProps) {
   return (
-    <div className="card-glow p-6 rounded-lg hover:scale-105 transition-transform duration-300 h-full flex flex-col">
+    <div className="card-glow p-6 rounded-lg hover:scale-105 transition-all duration-300 h-full flex flex-col group">
       <div className="flex items-start justify-between mb-4">
-        <div className="inline-flex items-center justify-center h-10 w-10 rounded border border-primary bg-primary/10 text-primary">
+        <div className="inline-flex items-center justify-center h-10 w-10 rounded border border-primary bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
           {icon}
         </div>
         <span className="text-xs text-primary bg-primary/10 px-3 py-1 rounded-full">
@@ -26,21 +28,35 @@ function ProjectCard({
         </span>
       </div>
 
-      <h3 className="text-xl font-semibold text-foreground mb-3">{title}</h3>
+      <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+        {title}
+      </h3>
       <p className="text-foreground/70 text-sm mb-4 flex-grow">
         {description}
       </p>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 mb-4">
         {technologies.map((tech, index) => (
           <span
             key={index}
-            className="text-xs bg-primary/10 text-primary px-2 py-1 rounded border border-primary/30"
+            className="text-xs bg-primary/10 text-primary px-2 py-1 rounded border border-primary/30 hover:border-primary/70 transition-colors"
           >
             {tech}
           </span>
         ))}
       </div>
+
+      {link && (
+        <a
+          href={link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center gap-2 text-sm text-primary hover:text-primary/80 transition-colors mt-auto"
+        >
+          View Project
+          <ExternalLink size={14} />
+        </a>
+      )}
     </div>
   );
 }
