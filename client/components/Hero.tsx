@@ -54,20 +54,20 @@ export function Hero() {
         {/* Stats */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 pt-12 border-t border-primary/20">
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary glow-text">4+</div>
-            <p className="text-sm text-foreground/60 mt-2">Projects</p>
+            <div className="text-3xl font-bold text-primary glow-text">5+</div>
+            <p className="text-sm text-foreground/60 mt-2">Major Projects</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary glow-text">5+</div>
+            <div className="text-3xl font-bold text-primary glow-text">6+</div>
             <p className="text-sm text-foreground/60 mt-2">Certifications</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary glow-text">10+</div>
-            <p className="text-sm text-foreground/60 mt-2">Skills</p>
+            <div className="text-3xl font-bold text-primary glow-text">15+</div>
+            <p className="text-sm text-foreground/60 mt-2">Tech Skills</p>
           </div>
           <div className="text-center">
-            <div className="text-3xl font-bold text-primary glow-text">8.6</div>
-            <p className="text-sm text-foreground/60 mt-2">GPA</p>
+            <div className="text-3xl font-bold text-primary glow-text">3</div>
+            <p className="text-sm text-foreground/60 mt-2">Hackathons</p>
           </div>
         </div>
       </div>
