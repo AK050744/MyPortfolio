@@ -31,6 +31,27 @@ function CertificationCard({ name, issuer, date, description }: Certification) {
 export function Certifications() {
   const certifications: Certification[] = [
     {
+      name: "UNESCO Youth Hackathon 2025",
+      issuer: "UNESCO",
+      date: "October 2025",
+      description:
+        "Certificate of participation for submitting an innovative project addressing 'Youth Leading the Way - Building MIL Solutions for Impact'.",
+    },
+    {
+      name: "CodeFest'25 - Capture The Flag (CTF)",
+      issuer: "Indian Institute of Technology (Banaras Hindu University)",
+      date: "2025",
+      description:
+        "Participated in competitive cybersecurity CTF competition, demonstrating ethical hacking and penetration testing skills.",
+    },
+    {
+      name: "Samsung Solve for Tomorrow 2025",
+      issuer: "Samsung",
+      date: "2025",
+      description:
+        "Certificate of participation for design thinking and innovative solution development in the Samsung Solve for Tomorrow program.",
+    },
+    {
       name: "Ethical Hacking (NPTEL)",
       issuer: "National Programme on Technology Enhanced Learning",
       date: "November 2025",
@@ -49,14 +70,7 @@ export function Certifications() {
       issuer: "National Programme on Technology Enhanced Learning",
       date: "November 2024",
       description:
-        "Foundational Python programming course with focus on practical application development.",
-    },
-    {
-      name: "TATA Group Job Simulation",
-      issuer: "TATA Consultancy Services",
-      date: "August 2025",
-      description:
-        "Industry-focused job simulation providing insights into enterprise-level cybersecurity practices.",
+        "Python programming course with focus on practical application development.",
     },
   ];
 
