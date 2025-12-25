@@ -103,7 +103,7 @@ export default function CertificationsPage() {
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
             {/* Certifications List */}
-            <div className="grid gap-6 mb-16">
+            <div className="grid gap-6">
               {certifications.map((cert, index) => (
                 <CertificationCard
                   key={index}
@@ -113,51 +113,6 @@ export default function CertificationsPage() {
                   description={cert.description}
                 />
               ))}
-            </div>
-
-            {/* Highlights */}
-            <div className="border-t border-primary/20 pt-12">
-              <h3 className="text-2xl font-semibold mb-6 text-foreground">
-                Key Achievements
-              </h3>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <h4 className="font-semibold text-primary mb-3">
-                    🏆 Hackathon Participant
-                  </h4>
-                  <p className="text-foreground/70 text-sm">
-                    Actively participated in UNESCO Youth Hackathon 2025 and contributed innovative solutions addressing global challenges.
-                  </p>
-                </div>
-
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <h4 className="font-semibold text-primary mb-3">
-                    🔐 Security Expert
-                  </h4>
-                  <p className="text-foreground/70 text-sm">
-                    Participated in CTF competitions and earned ethical hacking certifications demonstrating strong security expertise.
-                  </p>
-                </div>
-
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <h4 className="font-semibold text-primary mb-3">
-                    🚀 Innovation Leader
-                  </h4>
-                  <p className="text-foreground/70 text-sm">
-                    Samsung Solve for Tomorrow participant demonstrating design thinking and commitment to innovative problem-solving.
-                  </p>
-                </div>
-
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <h4 className="font-semibold text-primary mb-3">
-                    📚 Continuous Learner
-                  </h4>
-                  <p className="text-foreground/70 text-sm">
-                    Completed multiple NPTEL courses in Python, Databases, and Ethical Hacking showing commitment to professional development.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </section>
