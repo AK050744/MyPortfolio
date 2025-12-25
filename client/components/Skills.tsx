@@ -114,11 +114,11 @@ export function Skills() {
 
           <div className="space-y-6">
             {[
-              { name: "Cybersecurity & Hacking", level: 85 },
-              { name: "Web Application Security", level: 80 },
-              { name: "Network Security", level: 75 },
+              { name: "Full Stack Development", level: 85 },
+              { name: "Web Security & Hacking", level: 85 },
               { name: "Python Programming", level: 80 },
-              { name: "System Administration", level: 70 },
+              { name: "JavaScript/React", level: 80 },
+              { name: "Network Security", level: 75 },
               { name: "Database Management", level: 75 },
             ].map((skill, index) => (
               <div key={index}>
