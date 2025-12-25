@@ -21,16 +21,12 @@ export function Hero() {
 
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-          Full Stack Developer
-          <br />
-          <span className="glow-text">& Security Expert</span>
+          Hi, I'm Ansh
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-          Building innovative solutions with modern technologies
-          <br />
-          Specialized in Full Stack Development, Web Security & AI/ML
+          Full Stack Developer & Tech Enthusiast
         </p>
 
         {/* CTA Buttons */}
