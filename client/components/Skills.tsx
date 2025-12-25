@@ -45,15 +45,15 @@ export function Skills() {
       ],
     },
     {
-      title: "Security & Networking",
+      title: "Security",
       icon: <Zap size={20} />,
       skills: [
         "Ethical Hacking",
         "Penetration Testing",
         "Network Security",
-        "Web Application Security",
-        "OWASP",
+        "Web Security",
         "System Security",
+        "Vulnerability Assessment",
       ],
     },
     {
@@ -65,19 +65,19 @@ export function Skills() {
         "Problem-Solving",
         "Adaptability",
         "Communication",
-        "Critical Thinking",
+        "Project Management",
       ],
     },
     {
-      title: "Areas of Expertise",
+      title: "Other Skills",
       icon: <Brain size={20} />,
       skills: [
-        "AI/ML Development",
-        "Fraud Detection Systems",
-        "Vulnerability Assessment",
-        "System Architecture",
-        "Risk Analysis",
-        "DevSecOps",
+        "AI/ML",
+        "Fraud Detection",
+        "System Design",
+        "DevOps",
+        "Database Design",
+        "API Development",
       ],
     },
   ];
@@ -85,14 +85,8 @@ export function Skills() {
   return (
     <section id="skills" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="inline-block mb-4">
-          <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
-            Expertise
-          </span>
-        </div>
-
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground">
-          Skills & Expertise
+          Skills
         </h2>
 
         <div className="grid md:grid-cols-2 gap-6">
@@ -104,37 +98,6 @@ export function Skills() {
               skills={category.skills}
             />
           ))}
-        </div>
-
-        {/* Proficiency Levels */}
-        <div className="mt-16 pt-12 border-t border-primary/20">
-          <h3 className="text-2xl font-semibold mb-8 text-foreground">
-            Technical Proficiency
-          </h3>
-
-          <div className="space-y-6">
-            {[
-              { name: "Full Stack Development", level: 85 },
-              { name: "Web Security & Hacking", level: 85 },
-              { name: "Python Programming", level: 80 },
-              { name: "JavaScript/React", level: 80 },
-              { name: "Network Security", level: 75 },
-              { name: "Database Management", level: 75 },
-            ].map((skill, index) => (
-              <div key={index}>
-                <div className="flex justify-between mb-2">
-                  <span className="text-foreground font-medium">{skill.name}</span>
-                  <span className="text-primary">{skill.level}%</span>
-                </div>
-                <div className="h-2 rounded-full bg-primary/20 overflow-hidden">
-                  <div
-                    className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-500 rounded-full"
-                    style={{ width: `${skill.level}%` }}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
