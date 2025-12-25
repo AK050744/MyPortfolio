@@ -27,7 +27,7 @@ export function Contact() {
         </h2>
 
         <p className="text-lg text-foreground/70 mb-12 max-w-2xl">
-          Interested in collaborating on security projects or discussing innovative cybersecurity solutions? Reach out!
+          Have a project in mind, need consulting, or want to discuss tech and innovation? I'd love to connect!
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
