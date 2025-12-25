@@ -62,14 +62,14 @@ export function Navbar() {
         {isOpen && (
           <div className="md:hidden border-t border-primary/20 py-4 space-y-3 animate-slide-up">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="block text-sm text-foreground/80 hover:text-primary transition-colors py-2"
                 onClick={() => setIsOpen(false)}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href="https://www.linkedin.com/in/ansh-kumar-singh024940208"
