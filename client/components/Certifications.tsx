@@ -77,14 +77,8 @@ export function Certifications() {
   return (
     <section id="certifications" className="py-20 px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="inline-block mb-4">
-          <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
-            Credentials
-          </span>
-        </div>
-
         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-foreground">
-          Certifications & Achievements
+          Certifications
         </h2>
 
         <div className="grid gap-6 mb-16">
