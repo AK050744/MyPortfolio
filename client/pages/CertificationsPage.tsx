@@ -1,6 +1,6 @@
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { Award, TrendingUp } from "lucide-react";
+import { Award } from "lucide-react";
 
 interface Certification {
   name: string;
