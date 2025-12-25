@@ -4,12 +4,12 @@ import { CheckCircle } from "lucide-react";
 
 export default function About() {
   const highlights = [
-    "Cybersecurity Specialist & Penetration Tester",
-    "Ethical Hacking & Network Security Expert",
-    "AI & Machine Learning Enthusiast",
-    "Full-Stack Security Solutions Developer",
-    "Experienced with Python, MySQL, and Modern Security Tools",
-    "Hackathon Winner & Open Source Contributor",
+    "Full Stack Developer & Security Specialist",
+    "Web Application Security Expert",
+    "AI/ML & Fraud Detection Enthusiast",
+    "Experienced with Python, JavaScript, and Modern Frameworks",
+    "Ethical Hacking & Penetration Testing Specialist",
+    "Hackathon Participant & Innovation Advocate",
   ];
 
   return (
@@ -28,7 +28,7 @@ export default function About() {
               Professional Profile
             </h1>
             <p className="text-xl text-foreground/70">
-              Passionate Cybersecurity Professional & Innovator
+              Full Stack Developer & Security Innovator
             </p>
           </div>
         </section>
@@ -40,15 +40,15 @@ export default function About() {
               {/* Left Column */}
               <div className="space-y-6">
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  Passionate Cybersecurity Professional dedicated to developing innovative security solutions and identifying vulnerabilities before they become threats. I combine deep technical knowledge with creative problem-solving to build robust security systems.
+                  I'm a passionate full-stack developer with a strong focus on building secure, scalable applications. I combine technical excellence with innovative problem-solving to create solutions that matter. My journey spans from building web applications to implementing advanced security practices.
                 </p>
 
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  My expertise spans ethical hacking, penetration testing, vulnerability assessment, and network security. I excel at developing AI-driven security tools and leading teams through complex security challenges in dynamic environments.
+                  My expertise encompasses full-stack development, ethical hacking, penetration testing, and AI-driven fraud detection systems. I'm skilled at developing robust applications using modern frameworks and implementing security best practices throughout the development lifecycle.
                 </p>
 
                 <p className="text-lg text-foreground/80 leading-relaxed">
-                  I'm driven by continuous learning and sharing knowledge with the security community. My recent work includes developing advanced fraud detection systems, web application security testing, and innovative AI-powered development tools.
+                  I'm committed to continuous learning and staying updated with the latest technologies and industry trends. My recent work includes developing AI-powered development tools, fraud detection systems, and contributing to open-source projects that make a real impact.
                 </p>
               </div>
 
