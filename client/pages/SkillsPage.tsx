@@ -39,23 +39,23 @@ export default function SkillsPage() {
       icon: <Code2 size={20} />,
       skills: [
         "Python",
-        "MySQL",
         "JavaScript",
         "React",
+        "MySQL",
         "Full Stack Development",
         "Web Development",
       ],
     },
     {
-      title: "Security & Network",
+      title: "Security",
       icon: <Zap size={20} />,
       skills: [
         "Ethical Hacking",
         "Penetration Testing",
         "Network Security",
-        "Networking",
+        "Web Security",
         "System Security",
-        "OWASP",
+        "Vulnerability Assessment",
       ],
     },
     {
@@ -71,15 +71,15 @@ export default function SkillsPage() {
       ],
     },
     {
-      title: "Areas of Expertise",
+      title: "Other Skills",
       icon: <Brain size={20} />,
       skills: [
-        "Web Application Security",
         "AI/ML",
         "Fraud Detection",
-        "Vulnerability Assessment",
-        "Risk Management",
         "System Design",
+        "DevOps",
+        "Database Design",
+        "API Development",
       ],
     },
   ];
@@ -89,18 +89,13 @@ export default function SkillsPage() {
       <Navbar />
       <main className="overflow-x-hidden">
         {/* Hero Section */}
-        <section className="min-h-[60vh] flex items-center justify-center pt-20 pb-10 px-4">
+        <section className="min-h-[40vh] flex items-center justify-center pt-20 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-6">
-              <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
-                Expertise
-              </span>
-            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Skills & Expertise
+              Skills
             </h1>
             <p className="text-xl text-foreground/70">
-              Technical skills and professional expertise across multiple domains
+              Technical expertise and professional capabilities
             </p>
           </div>
         </section>
@@ -108,7 +103,7 @@ export default function SkillsPage() {
         {/* Content Section */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 gap-6 mb-16">
+            <div className="grid md:grid-cols-2 gap-6">
               {skillCategories.map((category, index) => (
                 <SkillCategory
                   key={index}
@@ -117,84 +112,6 @@ export default function SkillsPage() {
                   skills={category.skills}
                 />
               ))}
-            </div>
-
-            {/* Proficiency Levels */}
-            <div className="pt-12 border-t border-primary/20">
-              <h3 className="text-2xl font-semibold mb-8 text-foreground">
-                Technical Proficiency
-              </h3>
-
-              <div className="space-y-6">
-                {[
-                  { name: "Full Stack Development", level: 85 },
-                  { name: "Web Security & Hacking", level: 85 },
-                  { name: "Python Programming", level: 80 },
-                  { name: "JavaScript/React", level: 80 },
-                  { name: "Network Security", level: 75 },
-                  { name: "Database Management", level: 75 },
-                ].map((skill, index) => (
-                  <div key={index}>
-                    <div className="flex justify-between mb-2">
-                      <span className="text-foreground font-medium">{skill.name}</span>
-                      <span className="text-primary">{skill.level}%</span>
-                    </div>
-                    <div className="h-2 rounded-full bg-primary/20 overflow-hidden">
-                      <div
-                        className="h-full bg-gradient-to-r from-primary to-secondary transition-all duration-500 rounded-full"
-                        style={{ width: `${skill.level}%` }}
-                      />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Education */}
-            <div className="mt-16 pt-12 border-t border-primary/20">
-              <h3 className="text-2xl font-semibold mb-8 text-foreground">
-                Education
-              </h3>
-
-              <div className="space-y-4">
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h4 className="text-lg font-semibold text-foreground">
-                        B. Tech in Information Technology
-                      </h4>
-                      <p className="text-primary text-sm font-medium mt-1">
-                        Bharati Vidyapeeth (Deemed to be University)
-                      </p>
-                      <p className="text-foreground/60 text-sm mt-2">
-                        Expected Graduation: 2027 | Location: Pune, MH
-                      </p>
-                    </div>
-                    <span className="text-primary bg-primary/10 px-3 py-1 rounded text-sm">
-                      GPA: 8.60/10
-                    </span>
-                  </div>
-                </div>
-
-                <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
-                  <div className="flex items-start justify-between">
-                    <div>
-                      <h4 className="text-lg font-semibold text-foreground">
-                        Senior Secondary School (12th Grade)
-                      </h4>
-                      <p className="text-primary text-sm font-medium mt-1">
-                        Central Academy Senior Secondary School
-                      </p>
-                      <p className="text-foreground/60 text-sm mt-2">
-                        Year: 2022 | Location: Lucknow, UP
-                      </p>
-                    </div>
-                    <span className="text-primary bg-primary/10 px-3 py-1 rounded text-sm">
-                      79/100
-                    </span>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
         </section>
