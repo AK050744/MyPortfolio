@@ -31,13 +31,13 @@ export function Navbar() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.href}
-                href={link.href}
+                to={link.href}
                 className="text-sm text-foreground/80 hover:text-primary transition-colors duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
             <a
               href="https://www.linkedin.com/in/ansh-kumar-singh024940208"
