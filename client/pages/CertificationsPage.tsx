@@ -102,33 +102,6 @@ export default function CertificationsPage() {
         {/* Content Section */}
         <section className="py-20 px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Stats */}
-            <div className="grid md:grid-cols-3 gap-6 mb-16">
-              <div className="card-glow p-6 rounded-lg text-center">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded border border-primary bg-primary/10 text-primary mb-4">
-                  <TrendingUp size={24} />
-                </div>
-                <p className="text-3xl font-bold text-primary">7</p>
-                <p className="text-foreground/60 text-sm mt-2">Certifications Earned</p>
-              </div>
-
-              <div className="card-glow p-6 rounded-lg text-center">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded border border-primary bg-primary/10 text-primary mb-4">
-                  <Award size={24} />
-                </div>
-                <p className="text-3xl font-bold text-primary">3+</p>
-                <p className="text-foreground/60 text-sm mt-2">Hackathons & Competitions</p>
-              </div>
-
-              <div className="card-glow p-6 rounded-lg text-center">
-                <div className="inline-flex items-center justify-center h-12 w-12 rounded border border-primary bg-primary/10 text-primary mb-4">
-                  <Award size={24} />
-                </div>
-                <p className="text-3xl font-bold text-primary">Verified</p>
-                <p className="text-foreground/60 text-sm mt-2">All Credentials</p>
-              </div>
-            </div>
-
             {/* Certifications List */}
             <div className="grid gap-6 mb-16">
               {certifications.map((cert, index) => (
