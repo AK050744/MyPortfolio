@@ -116,7 +116,7 @@ export default function ProjectsPage() {
               Featured Projects
             </h1>
             <p className="text-xl text-foreground/70">
-              Innovative security solutions and cutting-edge development
+              Innovative solutions showcasing full-stack development and security expertise
             </p>
           </div>
         </section>
