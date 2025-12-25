@@ -203,35 +203,6 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Availability Status */}
-            <div className="card-glow p-8 rounded-lg text-center border-t border-primary/20 pt-12 hover:border-primary/50 transition-colors">
-              <div className="inline-flex items-center justify-center h-12 w-12 rounded-full border border-primary bg-primary/10 text-primary mx-auto mb-4">
-                <div className="h-3 w-3 rounded-full bg-primary animate-pulse" />
-              </div>
-              <p className="text-foreground font-semibold mb-2">
-                Currently Available for Collaboration
-              </p>
-              <p className="text-foreground/60 text-sm max-w-2xl mx-auto">
-                I'm actively looking for exciting projects, collaborations, and professional opportunities. Whether it's a full-time role, freelance work, or partnership, feel free to reach out!
-              </p>
-            </div>
-
-            {/* Response Time */}
-            <div className="grid md:grid-cols-2 gap-6 mt-12">
-              <div className="card-glow p-6 rounded-lg text-center hover:border-primary/70 transition-all duration-300">
-                <p className="text-2xl font-bold text-primary mb-2">⚡ Quick Response</p>
-                <p className="text-foreground/60 text-sm">
-                  I typically respond to messages within 24 hours
-                </p>
-              </div>
-
-              <div className="card-glow p-6 rounded-lg text-center hover:border-primary/70 transition-all duration-300">
-                <p className="text-2xl font-bold text-primary mb-2">🚀 Ready to Start</p>
-                <p className="text-foreground/60 text-sm">
-                  Available for new projects and exciting opportunities
-                </p>
-              </div>
-            </div>
           </div>
         </section>
       </main>
