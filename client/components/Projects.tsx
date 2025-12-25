@@ -133,34 +133,34 @@ export function Projects() {
           <div className="grid md:grid-cols-2 gap-6">
             <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                Penetration Testing & Vulnerability Assessment
+                Full-Stack Web Development
               </h4>
               <p className="text-foreground/70 text-sm">
-                Expert in identifying and mitigating web vulnerabilities including OWASP Top 10, XSS, SQLi, CSRF, and network-level threats.
+                Building responsive, scalable web applications using modern technologies like React, JavaScript, Python, and databases with focus on clean, maintainable code.
               </p>
             </div>
             <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                AI & Machine Learning Security
+                AI/ML & Fraud Detection
               </h4>
               <p className="text-foreground/70 text-sm">
-                Building intelligent security systems using machine learning for fraud detection, anomaly detection, and behavioral analytics.
+                Building intelligent systems using machine learning for fraud detection, anomaly detection, and behavioral analytics with real-time risk assessment.
               </p>
             </div>
             <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                Network Security & Infrastructure
+                Security & Penetration Testing
               </h4>
               <p className="text-foreground/70 text-sm">
-                Proficiency in network analysis, firewall configuration, security hardening, and infrastructure protection across multiple environments.
+                Expert in identifying and mitigating vulnerabilities, ethical hacking, penetration testing, and implementing security best practices.
               </p>
             </div>
             <div className="card-glow p-6 rounded-lg hover:border-primary/70 transition-all duration-300">
               <h4 className="font-semibold text-primary mb-3">
-                Full-Stack Development & DevSecOps
+                System Design & DevSecOps
               </h4>
               <p className="text-foreground/70 text-sm">
-                Building secure applications from ground up, integrating security throughout the development lifecycle with modern tools and frameworks.
+                Designing robust architectures, integrating security throughout development lifecycle, and implementing DevSecOps for production-ready applications.
               </p>
             </div>
           </div>
