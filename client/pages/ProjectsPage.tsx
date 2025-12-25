@@ -107,16 +107,11 @@ export default function ProjectsPage() {
         {/* Hero Section */}
         <section className="min-h-[60vh] flex items-center justify-center pt-20 pb-10 px-4">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="inline-block mb-6">
-              <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
-                Portfolio
-              </span>
-            </div>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
-              Featured Projects
+              Projects
             </h1>
             <p className="text-xl text-foreground/70">
-              Innovative solutions showcasing full-stack development and security expertise
+              A showcase of my recent work and projects
             </p>
           </div>
         </section>
