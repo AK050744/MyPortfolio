@@ -1,4 +1,5 @@
-import { ArrowRight, Shield } from "lucide-react";
+import { ArrowRight, Code } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export function Hero() {
   return (
@@ -14,33 +15,33 @@ export function Hero() {
         {/* Icon */}
         <div className="mb-6 inline-block">
           <div className="inline-flex items-center justify-center h-16 w-16 rounded-lg border border-primary bg-primary/10 text-primary animate-pulse-glow">
-            <Shield size={32} />
+            <Code size={32} />
           </div>
         </div>
 
         {/* Main Heading */}
         <h1 className="text-4xl md:text-6xl font-bold mb-6 text-foreground">
-          Cybersecurity
+          Full Stack Developer
           <br />
-          <span className="glow-text">Professional</span>
+          <span className="glow-text">& Security Expert</span>
         </h1>
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-          Penetration Testing Specialist • Ethical Hacker • Security Researcher
+          Building innovative solutions with modern technologies
           <br />
-          Protecting digital assets through advanced security practices
+          Specialized in Full Stack Development, Web Security & AI/ML
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
-          <a
-            href="#projects"
+          <Link
+            to="/projects"
             className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg border border-primary bg-primary text-primary-foreground font-semibold hover:bg-primary/90 hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
           >
             View Projects
             <ArrowRight size={18} />
-          </a>
+          </Link>
           <a
             href="https://www.linkedin.com/in/ansh-kumar-singh024940208"
             target="_blank"
