@@ -16,18 +16,12 @@ export function Contact() {
   return (
     <section id="contact" className="py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <div className="inline-block mb-4">
-          <span className="px-3 py-1 rounded-full border border-primary/50 bg-primary/10 text-sm text-primary">
-            Get in Touch
-          </span>
-        </div>
-
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">
-          Let's Connect
+          Get in Touch
         </h2>
 
         <p className="text-lg text-foreground/70 mb-12 max-w-2xl">
-          Have a project in mind, need consulting, or want to discuss tech and innovation? I'd love to connect!
+          Feel free to reach out. I'd love to hear from you.
         </p>
 
         <div className="grid md:grid-cols-2 gap-8 mb-12">
