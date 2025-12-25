@@ -32,7 +32,7 @@ export default function ContactPage() {
               Let's Connect
             </h1>
             <p className="text-xl text-foreground/70">
-              Have a project in mind or want to collaborate? Reach out and let's create something amazing together.
+              Let's connect! Whether you have a project in mind, need consulting, or just want to chat about tech and innovation.
             </p>
           </div>
         </section>
