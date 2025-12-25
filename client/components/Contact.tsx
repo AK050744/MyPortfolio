@@ -172,10 +172,10 @@ export function Contact() {
         <div className="card-glow p-6 rounded-lg text-center border-t border-primary/20 pt-8 hover:border-primary/50 transition-colors">
           <p className="text-foreground mb-2 flex items-center justify-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-primary animate-pulse" />
-            Open to Collaboration
+            Open to Opportunities
           </p>
           <p className="text-foreground/60 text-sm">
-            Available for cybersecurity consulting, custom security solutions, and innovative project partnerships
+            Available for full-time roles, freelance projects, consulting work, and innovative collaborations
           </p>
         </div>
       </div>
