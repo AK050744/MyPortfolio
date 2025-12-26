@@ -10,15 +10,15 @@ export function About() {
           {/* Left Column */}
           <div className="space-y-6">
             <p className="text-lg text-foreground/80 leading-relaxed">
-              I'm a full-stack developer passionate about creating effective web applications. I enjoy working with modern technologies and solving complex problems.
+              I'm a developer focused on building scalable, secure, and user-centric products. I enjoy working in fast-paced, startup-like environments where ideas turn into real-world solutions.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              With experience in full-stack development, security, and AI/ML, I focus on building solutions that are functional, secure, and user-friendly. I'm always interested in collaborating on interesting projects.
+              My experience spans development, cybersecurity, and AI, with a strong interest in research-driven problem solving. I actively contribute to open-source projects and experiment with emerging technologies.
             </p>
 
             <p className="text-lg text-foreground/80 leading-relaxed">
-              When I'm not coding, I enjoy exploring new technologies, participating in hackathons, and learning from the development community.
+              I'm always open to collaborating on innovative products, impactful research, and open-source initiatives.
             </p>
           </div>
 
