@@ -14,7 +14,7 @@ export function Hero() {
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Icon */}
         <div className="mb-6 inline-block">
-          <div className="inline-flex items-center justify-center h-16 w-16 rounded-lg border border-primary bg-primary/10 text-primary animate-pulse-glow">
+          <div className="inline-flex items-center justify-center h-16 w-16 rounded-lg border border-primary bg-primary/10 text-primary">
             <Code size={32} />
           </div>
         </div>
