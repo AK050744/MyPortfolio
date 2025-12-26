@@ -13,7 +13,7 @@ export default function About() {
               About Me
             </h1>
             <p className="text-xl text-foreground/70">
-              Full Stack Developer & Innovation Enthusiast
+              Developer | Startup & Research Enthusiast
             </p>
           </div>
         </section>
@@ -23,15 +23,15 @@ export default function About() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-8">
               <p className="text-lg text-foreground/80 leading-relaxed">
-                I'm a full-stack developer passionate about creating effective web applications and exploring new technologies. I enjoy working on diverse projects that challenge me to grow and learn continuously.
+                I'm a developer focused on building scalable, secure, and user-centric products. I enjoy working in fast-paced, startup-like environments where ideas turn into real-world solutions.
               </p>
 
               <p className="text-lg text-foreground/80 leading-relaxed">
-                With experience in full-stack development, security, and AI/ML, I focus on building solutions that are not only functional but also secure and user-friendly. I'm always interested in collaborating on interesting projects and connecting with like-minded developers.
+                My experience spans development, cybersecurity, and AI, with a strong interest in research-driven problem solving. I actively contribute to open-source projects and experiment with emerging technologies to stay ahead of the curve.
               </p>
 
               <p className="text-lg text-foreground/80 leading-relaxed">
-                When I'm not coding, I enjoy exploring new technologies, participating in hackathons, and contributing to projects that make a positive impact.
+                I'm always open to collaborating on innovative products, impactful research, and open-source initiatives.
               </p>
             </div>
 
