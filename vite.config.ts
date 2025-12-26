@@ -5,6 +5,9 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // Base path for GitHub Pages (change this to your repository name)
+  // For root domain, use base: "/"
+  base: process.env.GITHUB_PAGES === "true" ? "/MyPortfolio/" : "/",
   server: {
     host: "::",
     port: 8080,
