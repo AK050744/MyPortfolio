@@ -26,7 +26,7 @@ export function Hero() {
 
         {/* Subtitle */}
         <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-2xl mx-auto">
-          Full Stack Developer & Tech Enthusiast
+          Developer & Research Enthusiast
         </p>
 
         {/* CTA Buttons */}
