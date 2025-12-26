@@ -5,11 +5,11 @@ export function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-10 px-4">
       {/* Background Grid Effect */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(160,255,200,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(160,255,200,0.05)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
       {/* Radial Gradient Background */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/20 to-transparent rounded-full blur-3xl opacity-50" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-secondary/20 to-transparent rounded-full blur-3xl opacity-50" />
+      <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-radial from-primary/10 to-transparent rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-radial from-secondary/10 to-transparent rounded-full blur-3xl opacity-30" />
 
       <div className="relative z-10 max-w-4xl mx-auto text-center">
         {/* Icon */}
