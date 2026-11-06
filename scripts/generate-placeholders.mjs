@@ -63,3 +63,4 @@ for (const p of placeholders) {
 }
 
 console.log(`Generated ${placeholders.length} neutral placeholder SVGs in ${outDir}`);
+

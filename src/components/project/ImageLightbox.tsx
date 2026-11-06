@@ -170,3 +170,4 @@ export function ImageLightbox({ images }: ImageLightboxProps) {
     </div>
   );
 }
+

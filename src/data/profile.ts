@@ -91,3 +91,4 @@ const rawProfile = {
 
 // Validate profile at module load / build time
 export const profile: Profile = ProfileSchema.parse(rawProfile);
+

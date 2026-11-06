@@ -111,3 +111,4 @@ const glbBuffer = Buffer.concat([
 
 fs.writeFileSync(path.join(outDir, 'sample-geometry.glb'), glbBuffer);
 console.log(`Generated valid GLB binary at public/models/sample-geometry.glb (${glbBuffer.length} bytes)`);
+

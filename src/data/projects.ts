@@ -336,3 +336,4 @@ export function getProjectsByCategory(category?: string): Project[] {
   if (!category || category === "all") return projects;
   return projects.filter((p) => p.category === category);
 }
+

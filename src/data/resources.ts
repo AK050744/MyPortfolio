@@ -34,3 +34,4 @@ export const resources: ResourceItem[] = [
     format: "GLB / Draco Compressed",
   },
 ];
+

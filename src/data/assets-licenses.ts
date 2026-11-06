@@ -25,3 +25,4 @@ export const assetLicenses: AssetLicense[] = [
 export function getAssetLicense(id: string): AssetLicense | undefined {
   return assetLicenses.find((license) => license.id === id);
 }
+
