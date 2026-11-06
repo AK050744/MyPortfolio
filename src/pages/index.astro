@@ -1,0 +1,19 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/hero/Hero.astro";
+import ProjectGrid from "../components/work/ProjectGrid.astro";
+import { profile } from "../data/profile";
+
+const categoryParam = Astro.url.searchParams.get("category") || "all";
+---
+
+<BaseLayout
+  title={`${profile.name} · ${profile.title}`}
+  description={`${profile.name} is a 3D Artist and Technical Artist based in ${profile.location}. Explore high-fidelity hard-surface models, environments, and real-time WebGL assets.`}
+>
+  <!-- Accessible 1st-paint Hero -->
+  <Hero />
+
+  <!-- Featured Work Grid with Accessible Category Filters -->
+  <ProjectGrid selectedCategory={categoryParam} />
+</BaseLayout>

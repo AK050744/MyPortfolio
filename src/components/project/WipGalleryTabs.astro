@@ -1,0 +1,134 @@
+---
+import type { ImageAsset } from "../../data/schema";
+
+interface Props {
+  wireframe?: ImageAsset[];
+  clay?: ImageAsset[];
+  lighting?: ImageAsset[];
+}
+
+const { wireframe, clay, lighting } = Astro.props;
+
+const hasWireframe = wireframe && wireframe.length > 0;
+const hasClay = clay && clay.length > 0;
+const hasLighting = lighting && lighting.length > 0;
+
+const defaultTab = hasClay ? "clay" : hasWireframe ? "wireframe" : "lighting";
+---
+
+<div class="wip-container">
+  <!-- Tab navigation -->
+  <div class="flex items-center gap-2 border-b border-border/40 pb-3 mb-6" role="tablist" aria-label="Work in progress passes">
+    {hasClay && (
+      <button
+        type="button"
+        role="tab"
+        aria-selected={defaultTab === "clay" ? "true" : "false"}
+        aria-controls="panel-clay"
+        id="tab-clay"
+        class="wip-tab px-4 py-2 text-xs font-mono-tech rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        Clay Passes ({clay!.length})
+      </button>
+    )}
+    {hasWireframe && (
+      <button
+        type="button"
+        role="tab"
+        aria-selected={defaultTab === "wireframe" ? "true" : "false"}
+        aria-controls="panel-wireframe"
+        id="tab-wireframe"
+        class="wip-tab px-4 py-2 text-xs font-mono-tech rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        Quad Wireframes ({wireframe!.length})
+      </button>
+    )}
+    {hasLighting && (
+      <button
+        type="button"
+        role="tab"
+        aria-selected={defaultTab === "lighting" ? "true" : "false"}
+        aria-controls="panel-lighting"
+        id="tab-lighting"
+        class="wip-tab px-4 py-2 text-xs font-mono-tech rounded-md transition-colors focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        Lighting Tests ({lighting!.length})
+      </button>
+    )}
+  </div>
+
+  <!-- Tab Panels -->
+  {hasClay && (
+    <div id="panel-clay" role="tabpanel" aria-labelledby="tab-clay" class={`wip-panel grid grid-cols-1 sm:grid-cols-2 gap-4 ${defaultTab === "clay" ? "" : "hidden"}`}>
+      {clay!.map((img) => (
+        <figure class="overflow-hidden rounded-lg border border-border/40 bg-black/40">
+          <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full object-cover" />
+          <figcaption class="p-3 bg-[hsl(var(--bg-surface))] text-xs text-muted-foreground">
+            {img.caption || img.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+
+  {hasWireframe && (
+    <div id="panel-wireframe" role="tabpanel" aria-labelledby="tab-wireframe" class={`wip-panel grid grid-cols-1 sm:grid-cols-2 gap-4 ${defaultTab === "wireframe" ? "" : "hidden"}`}>
+      {wireframe!.map((img) => (
+        <figure class="overflow-hidden rounded-lg border border-border/40 bg-black/40">
+          <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full object-cover" />
+          <figcaption class="p-3 bg-[hsl(var(--bg-surface))] text-xs text-muted-foreground">
+            {img.caption || img.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+
+  {hasLighting && (
+    <div id="panel-lighting" role="tabpanel" aria-labelledby="tab-lighting" class={`wip-panel grid grid-cols-1 sm:grid-cols-2 gap-4 ${defaultTab === "lighting" ? "" : "hidden"}`}>
+      {lighting!.map((img) => (
+        <figure class="overflow-hidden rounded-lg border border-border/40 bg-black/40">
+          <img src={img.src} alt={img.alt} width={img.width} height={img.height} loading="lazy" class="w-full object-cover" />
+          <figcaption class="p-3 bg-[hsl(var(--bg-surface))] text-xs text-muted-foreground">
+            {img.caption || img.alt}
+          </figcaption>
+        </figure>
+      ))}
+    </div>
+  )}
+</div>
+
+<script>
+  const tabs = document.querySelectorAll<HTMLButtonElement>(".wip-tab");
+  const panels = document.querySelectorAll<HTMLElement>(".wip-panel");
+
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => {
+        t.setAttribute("aria-selected", "false");
+        t.classList.remove("bg-primary", "text-black", "font-bold");
+        t.classList.add("text-muted-foreground", "hover:text-foreground");
+      });
+
+      tab.setAttribute("aria-selected", "true");
+      tab.classList.add("bg-primary", "text-black", "font-bold");
+      tab.classList.remove("text-muted-foreground", "hover:text-foreground");
+
+      const targetId = tab.getAttribute("aria-controls");
+      panels.forEach((p) => {
+        if (p.id === targetId) {
+          p.classList.remove("hidden");
+        } else {
+          p.classList.add("hidden");
+        }
+      });
+    });
+
+    // Initialize styling
+    if (tab.getAttribute("aria-selected") === "true") {
+      tab.classList.add("bg-primary", "text-black", "font-bold");
+    } else {
+      tab.classList.add("text-muted-foreground", "hover:text-foreground");
+    }
+  });
+</script>

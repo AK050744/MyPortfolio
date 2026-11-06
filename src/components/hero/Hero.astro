@@ -1,0 +1,159 @@
+---
+import { profile } from "../../data/profile";
+import { ShowreelModal } from "../showreel/ShowreelModal";
+import { WebGLHeroCanvas } from "./WebGLHeroCanvas";
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+
+<section
+  class="relative min-h-[90vh] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-20 border-b border-border/40"
+  aria-label="Hero Section"
+>
+  <!-- Background Media Layer: High-Res Poster + Optional Muted Video Loop -->
+  <div class="absolute inset-0 z-0 bg-[hsl(var(--bg-studio))]">
+    <!-- Static Poster Image (always rendered first and as fallback) -->
+    <img
+      src="/placeholders/showreel-poster.svg"
+      alt="Studio hero background featuring atmospheric 3D lighting, mesh topologies, and cinematic renders"
+      class="h-full w-full object-cover opacity-20 filter blur-sm scale-105"
+      id="hero-poster"
+      width="1920"
+      height="1080"
+      loading="eager"
+      decoding="async"
+    />
+
+    <!-- Video Loop (Muted, Playsinline, Loop; paused if reduced-motion) -->
+    <video
+      id="hero-video"
+      class="absolute inset-0 h-full w-full object-cover opacity-25 hidden sm:block"
+      muted
+      loop
+      playsinline
+      poster="/placeholders/showreel-poster.svg"
+      aria-hidden="true"
+    >
+      <!-- Optional owner loop source when available in /public/assets-source/ -->
+      <!-- <source src="/assets-source/hero-loop.mp4" type="video/mp4" /> -->
+    </video>
+
+    <!-- Studio Lighting Vignette Overlay -->
+    <div class="absolute inset-0 bg-gradient-to-t from-[hsl(var(--bg-studio))] via-[hsl(var(--bg-studio))]/80 to-[hsl(var(--bg-studio))]/60 pointer-events-none"></div>
+  </div>
+
+  <!-- Progressive Enhancement: WebGL Particle Mesh (Client:idle) -->
+  {profile.features.webglHero && (
+    <WebGLHeroCanvas client:idle />
+  )}
+
+  <!-- Hero Content Overlay -->
+  <div class="relative z-10 mx-auto max-w-4xl text-center flex flex-col items-center">
+    <!-- Studio Tag / Badge -->
+    <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-mono-tech text-primary">
+      <span class="h-2 w-2 rounded-full bg-primary" aria-hidden="true"></span>
+      <span>3D Modeling · Lighting · Procedural Animation · Technical Art</span>
+    </div>
+
+    <!-- Main Title -->
+    <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-foreground mb-6">
+      <span class="block">{profile.name}</span>
+      <span class="block text-2xl sm:text-3xl md:text-4xl font-normal text-muted-foreground mt-2 font-mono-tech">
+        {profile.title}
+      </span>
+    </h1>
+
+    <!-- Positioning Statement -->
+    <p class="max-w-2xl text-base sm:text-lg text-foreground/80 leading-relaxed mb-10">
+      {profile.tagline} Focused on high-fidelity hard-surface modeling, atmospheric environment design, and modern real-time WebGL workflows.
+    </p>
+
+    <!-- CTAs & Showreel Modal Island -->
+    <div class="flex flex-wrap items-center justify-center gap-4">
+      <a
+        href="#work-grid"
+        class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-lg transition-all hover:bg-amber-400 focus-visible:ring-2 focus-visible:ring-ring"
+      >
+        <span>Explore Work</span>
+        <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+        </svg>
+      </a>
+
+      <!-- Showreel Modal React Island -->
+      <ShowreelModal client:idle showreel={profile.showreel} basePath={basePath} />
+    </div>
+
+    <!-- Verified Technical Facts Strip -->
+    <div class="mt-14 pt-8 border-t border-border/30 w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-xs font-mono-tech text-muted-foreground">
+      <div>
+        <span class="block text-lg font-bold text-foreground">Pune, IN</span>
+        <span>Location</span>
+      </div>
+      <div>
+        <span class="block text-lg font-bold text-primary">2027</span>
+        <span>B.Tech IT</span>
+      </div>
+      <div>
+        <span class="block text-lg font-bold text-foreground">Kahana Group</span>
+        <span>Intern (2026)</span>
+      </div>
+      <div>
+        <span class="block text-lg font-bold text-primary">Static 1st</span>
+        <span>WCAG 2.2 AA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Accessible Video Loop Pause/Play Control (WCAG 2.2.2) -->
+  <div class="absolute bottom-4 right-4 z-20">
+    <button
+      type="button"
+      id="hero-media-toggle"
+      class="inline-flex items-center gap-1.5 rounded-md border border-border/60 bg-[hsl(var(--bg-studio))]/80 px-2.5 py-1.5 text-xs text-muted-foreground hover:text-foreground focus-visible:ring-2 focus-visible:ring-ring"
+      aria-label="Pause background animation"
+    >
+      <svg id="hero-pause-icon" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 5.25v13.5m-7.5-13.5v13.5" />
+      </svg>
+      <svg id="hero-play-icon" class="h-4 w-4 hidden" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M5.25 5.653c0-.856.917-1.398 1.667-.986l11.54 6.348a1.125 1.125 0 010 1.971l-11.54 6.347a1.125 1.125 0 01-1.667-.985V5.653z" />
+      </svg>
+      <span id="hero-toggle-label" class="font-mono-tech text-[11px]">Pause Background</span>
+    </button>
+  </div>
+</section>
+
+<script>
+  const video = document.getElementById("hero-video") as HTMLVideoElement | null;
+  const toggleBtn = document.getElementById("hero-media-toggle");
+  const pauseIcon = document.getElementById("hero-pause-icon");
+  const playIcon = document.getElementById("hero-play-icon");
+  const toggleLabel = document.getElementById("hero-toggle-label");
+
+  if (toggleBtn && video && pauseIcon && playIcon && toggleLabel) {
+    const isReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (isReducedMotion) {
+      video.pause();
+      pauseIcon.classList.add("hidden");
+      playIcon.classList.remove("hidden");
+      toggleLabel.textContent = "Play Background";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+      if (video.paused) {
+        video.play();
+        pauseIcon.classList.remove("hidden");
+        playIcon.classList.add("hidden");
+        toggleLabel.textContent = "Pause Background";
+        toggleBtn.setAttribute("aria-label", "Pause background animation");
+      } else {
+        video.pause();
+        pauseIcon.classList.add("hidden");
+        playIcon.classList.remove("hidden");
+        toggleLabel.textContent = "Play Background";
+        toggleBtn.setAttribute("aria-label", "Play background animation");
+      }
+    });
+  }
+</script>
