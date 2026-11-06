@@ -70,7 +70,7 @@ export function ShowreelModal({ showreel, basePath = "" }: ShowreelModalProps) {
 
   return (
     <>
-      <!-- Trigger Button -->
+      {/* Trigger Button */}
       <button
         ref={triggerRef}
         type="button"
@@ -89,7 +89,7 @@ export function ShowreelModal({ showreel, basePath = "" }: ShowreelModalProps) {
         <span>Play 3D Showreel</span>
       </button>
 
-      <!-- Accessible Dialog Modal -->
+      {/* Accessible Dialog Modal */}
       {isOpen && (
         <div
           className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-md p-4 sm:p-6"

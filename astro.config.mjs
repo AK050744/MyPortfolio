@@ -9,6 +9,11 @@ export default defineConfig({
   base: process.env.GITHUB_PAGES === 'true' ? '/MyPortfolio' : '/',
   build: {
     format: 'directory'
+  },
+  vite: {
+    build: {
+      chunkSizeWarningLimit: 1200
+    }
   }
 });
 

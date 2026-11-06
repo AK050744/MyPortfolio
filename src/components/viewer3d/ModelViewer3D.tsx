@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import type * as THREE from "three";
 import type { ModelAsset } from "../../data/schema";
 
 interface ModelViewer3DProps {
@@ -145,7 +146,7 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         controls.update();
 
         // Subtle idle rotation if user has NOT requested reduced motion
-        if (loadedModel && !isReducedMotion && !controls.state) {
+        if (loadedModel && !isReducedMotion && !(controls as any).state) {
           loadedModel.rotation.y += 0.003;
         }
 
@@ -196,33 +197,46 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
 
         const orbitSpeed = 0.08;
         const zoomSpeed = 0.2;
+        const anyControls = controls as any;
 
         switch (e.key) {
           case "ArrowLeft":
             e.preventDefault();
-            controls.rotateLeft(orbitSpeed);
+            if (typeof anyControls.rotateLeft === "function") {
+              anyControls.rotateLeft(orbitSpeed);
+            }
             break;
           case "ArrowRight":
             e.preventDefault();
-            controls.rotateLeft(-orbitSpeed);
+            if (typeof anyControls.rotateLeft === "function") {
+              anyControls.rotateLeft(-orbitSpeed);
+            }
             break;
           case "ArrowUp":
             e.preventDefault();
-            controls.rotateUp(orbitSpeed);
+            if (typeof anyControls.rotateUp === "function") {
+              anyControls.rotateUp(orbitSpeed);
+            }
             break;
           case "ArrowDown":
             e.preventDefault();
-            controls.rotateUp(-orbitSpeed);
+            if (typeof anyControls.rotateUp === "function") {
+              anyControls.rotateUp(-orbitSpeed);
+            }
             break;
           case "+":
           case "=":
             e.preventDefault();
-            controls.dollyIn(1 + zoomSpeed);
+            if (typeof anyControls.dollyIn === "function") {
+              anyControls.dollyIn(1 + zoomSpeed);
+            }
             break;
           case "-":
           case "_":
             e.preventDefault();
-            controls.dollyOut(1 + zoomSpeed);
+            if (typeof anyControls.dollyOut === "function") {
+              anyControls.dollyOut(1 + zoomSpeed);
+            }
             break;
           case "r":
           case "R":
@@ -255,13 +269,13 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         controls.dispose();
 
         scene.traverse((obj) => {
-          if ((obj as THREE.Mesh).isMesh) {
-            const mesh = obj as THREE.Mesh;
+          const mesh = obj as any;
+          if (mesh && mesh.isMesh) {
             mesh.geometry?.dispose();
             if (Array.isArray(mesh.material)) {
-              mesh.material.forEach((mat) => mat.dispose());
+              mesh.material.forEach((mat: any) => mat?.dispose?.());
             } else {
-              mesh.material?.dispose();
+              mesh.material?.dispose?.();
             }
           }
         });
@@ -316,7 +330,7 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         }`}
       />
 
-      <!-- 3. Pre-activation Opt-in Overlay -->
+      {/* 3. Pre-activation Opt-in Overlay */}
       {!isLoaded && !isLoading && !errorMessage && (
         <div className="absolute inset-0 z-10 flex flex-col items-center justify-center p-6 text-center">
           <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full border border-primary/40 bg-primary/10 text-primary">
@@ -356,7 +370,7 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         </div>
       )}
 
-      <!-- 4. Loading Progress Bar (Accessible role="progressbar") -->
+      {/* 4. Loading Progress Bar (Accessible role="progressbar") */}
       {isLoading && (
         <div
           className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center"
@@ -378,7 +392,7 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         </div>
       )}
 
-      <!-- 5. Error & Fallback State with Retry -->
+      {/* 5. Error & Fallback State with Retry */}
       {errorMessage && (
         <div className="absolute inset-0 z-20 flex flex-col items-center justify-center p-6 text-center bg-black/75">
           <svg className="h-8 w-8 text-destructive mb-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -396,7 +410,7 @@ export function ModelViewer3D({ model, projectTitle }: ModelViewer3DProps) {
         </div>
       )}
 
-      <!-- 6. Active Viewer HUD Controls (Reset Camera, Keyboard Hints) -->
+      {/* 6. Active Viewer HUD Controls (Reset Camera, Keyboard Hints) */}
       {isLoaded && !errorMessage && (
         <div className="absolute bottom-3 left-3 right-3 z-20 flex items-center justify-between pointer-events-none">
           <div
