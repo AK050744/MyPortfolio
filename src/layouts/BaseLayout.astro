@@ -1,0 +1,92 @@
+---
+import Header from "../components/core/Header.astro";
+import Footer from "../components/core/Footer.astro";
+import { profile } from "../data/profile";
+import "../styles/tokens.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
+}
+
+const {
+  title = `${profile.name} · ${profile.title}`,
+  description = profile.tagline,
+  image = "/placeholders/showreel-poster.svg",
+  article = false,
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://ak050744.github.io");
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.name,
+  jobTitle: profile.title,
+  email: profile.email,
+  url: canonicalURL.origin,
+  sameAs: [profile.github],
+  alumniOf: {
+    "@type": "EducationalOrganization",
+    name: profile.education.institution,
+  },
+  knowsAbout: [
+    "3D Modeling",
+    "Animation",
+    "Texturing",
+    "Lighting",
+    ...profile.technicalSkills,
+  ],
+};
+---
+
+<!doctype html>
+<html lang="en" class="dark scroll-smooth" id="top">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
+    <meta name="theme-color" content="#0B0D13" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, canonicalURL.origin).href} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content={canonicalURL.href} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL(image, canonicalURL.origin).href} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Preload Hero Poster Image for Fast LCP -->
+    <link rel="preload" as="image" href="/placeholders/showreel-poster.svg" fetchpriority="high" />
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json" set:html={JSON.stringify(personJsonLd)} />
+  </head>
+  <body class="min-h-screen bg-[hsl(var(--bg-studio))] text-foreground flex flex-col antialiased selection:bg-primary selection:text-black">
+    <!-- Accessible Skip to Content Link (WCAG 2.4.1) -->
+    <a href="#main-content" class="skip-to-content">
+      Skip to main content
+    </a>
+
+    <Header />
+
+    <main id="main-content" class="flex-1 focus:outline-none" tabindex="-1">
+      <slot />
+    </main>
+
+    <Footer />
+  </body>
+</html>
