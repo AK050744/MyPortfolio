@@ -59,3 +59,4 @@ Tested with **6x CPU Throttling** and **Simulated Mobile Viewport (390px × 844p
   - Accessibility: **100**
   - Best Practices: **100**
   - SEO: **100**
+
